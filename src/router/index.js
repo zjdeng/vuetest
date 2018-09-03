@@ -1,21 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/view/HelloWorld'
-import he1 from '@/view/Communication'
+import MedicalHistory from '@/view/MedicalHistory'
+import Communication from '@/view/Communication'
 
 Vue.use(Router)
 
 export default new Router({
+  linkActiveClass: '', // 每个主路由都会加的class
+  linkExactActiveClass: 'active', // 选中路由才会加的class
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'MedicalHistory',
+      component: MedicalHistory
     },
     {
-      path: '/1',
-      name: 'he1',
-      component: he1
+      path: '/Communication',
+      name: 'Communication',
+      component: Communication
     }
   ]
 })
