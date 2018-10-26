@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import MedicalHistory from '@/view/MedicalHistory'
-import Communication from '@/view/Communication'
+import Example from '@/view/Example'
 
 Vue.use(Router)
 
@@ -11,13 +10,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'MedicalHistory',
-      component: MedicalHistory
+      redirect: 'Example'
     },
     {
-      path: '/Communication',
-      name: 'Communication',
-      component: Communication
+      path: '/Example',
+      name: '',
+      component: Example
     }
   ]
 })
