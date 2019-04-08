@@ -1,5 +1,6 @@
 * {
 	box-sizing: border-box;
+	font-family: "Microsoft YaHei", "Arial" !important;
 }
 html {
 	height: 100%;
@@ -22,4 +23,34 @@ input[type=button] {
 	content: '';
 	display: table;
 	clear: both
+}
+
+.talent-dialog-commonTipsBox {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	z-index: 9999;
+}
+.talent-dialog-commonTips {
+	padding: 10px 50px 10px 20px;
+	border-radius: 3px;
+	font-size: 14px;
+	i {
+		vertical-align: -1px;
+    margin-right: 10px;
+	}
+	&.normal {
+		background-color: #ebfff4;
+		border: 1px solid #17b55b;
+		box-shadow: 1px 1px 5px #beead1,
+								-1px -1px 5px #beead1;
+		color: #17b55b;
+	}
+	&.error {
+		color: #ff0000;
+		background-color: #ffe7e0;
+		border: 1px solid #fd4d17;
+		box-shadow: 1px 1px 5px #ffb8b8,
+								-1px -1px 5px #ffb8b8;
+	}
 }
