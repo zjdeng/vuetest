@@ -35,9 +35,7 @@ var Tips = (function(window) {
 			delay: 2000, // 延时 ms
 			content: '', // 提示正文
 			style: 'error', // 样式: 'error'-错误, 'normal'-正常
-			callback: function () {
-				// 回调函数
-			}
+			callback: function () {} // 回调函数
 		}, options)
 
 		var html = ''

@@ -21,20 +21,27 @@
         </table>
       </div>
     </div>
-
+    <AlertDialog :params="AlertDialogBool" :AlertDialogObj="AlertDialogObj" @closeParams="triggerAlertDialog"></AlertDialog>
   </div>
 </template>
 
 <script>
 import {mapGetters, Store} from 'vuex'
+import AlertDialog from '../components/AlertDialog'
 export default {
   name: 'Example',
+  components: { AlertDialog },
 	data: function () {
 		return {
-      patientList: []
+      patientList: [],
+      AlertDialogBool: false,
+      AlertDialogObj: {},
 		}
   },
   methods: {
+    triggerAlertDialog: function (val) {
+      this.AlertDialogBool = val
+    }
   },
   created: function () {
   },

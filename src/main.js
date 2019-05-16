@@ -10,10 +10,12 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'less'
 import axios from 'axios'
 import store from './store/store'
+import utils from './utils/index'
 Vue.prototype.axios = axios
 
 Vue.use(Vuex)
 Vue.use(ElementUI)
+Vue.prototype.$utils = utils
 
 /* eslint-disable no-new */
 new Vue({
