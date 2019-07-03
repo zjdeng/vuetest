@@ -15,7 +15,9 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "echarts": "^4.2.0-rc.2",
     "element-ui": "^2.4.6",
+    "jquery": "^2.2.1",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "module": "^1.2.5",

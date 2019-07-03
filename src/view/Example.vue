@@ -1,7 +1,7 @@
 <template>
   <div id="Example">
     <!-- 头部固定table -->
-    <div class="tableBox" v-if="treatmentList_temp && treatmentList_temp.length != 0">
+    <div class="tableBox">
       <table>
         <tr>
           <td>序号</td>
@@ -28,6 +28,8 @@
 <script>
 import {mapGetters, Store} from 'vuex'
 import AlertDialog from '../components/AlertDialog'
+let echarts = require('echarts/lib/echarts')
+require('echarts/lib/chart/pie')
 export default {
   name: 'Example',
   components: { AlertDialog },
