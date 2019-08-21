@@ -54,3 +54,36 @@ input[type=button] {
 								-1px -1px 5px #ffb8b8;
 	}
 }
+
+.customDialog {
+	z-index: 80 !important;
+}
+.customDialog > .modal-dialog {
+	height: 340px;
+	.alert-content {
+		text-align: center;
+		margin-top: 50px;
+		.alert-img {
+			display: inline-block;
+			vertical-align: -10px;
+			margin-right: 20px;
+			.alertIcon {
+				background-image: url('~img/alertIcon.png');
+				display: inline-block;
+				width: 73px;
+				height: 70px;
+			}
+		}
+		.alert-text {
+			display: inline-block;
+			text-align: left;
+			.alert-text-title {
+				font-size: 18px;
+				margin-bottom: 10px;
+			}
+			.alert-text-sub {
+				color: #999;
+			}
+		}
+	}
+}

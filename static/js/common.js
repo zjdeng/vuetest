@@ -78,6 +78,83 @@ var Tips = (function(window) {
 	
 })()
 
+var alertDialog = (function (window) {
+	var alertDialog = function (options) {
+		var opts = Object.assign({
+			id: 'd' + new Date().getTime(), // ID
+			title: '',
+			content: '结果已经反馈，是否现在查看？',
+			subContent: '',
+			okFun: function () {
+
+			},
+			okStr: '现在就看',
+			cancelFun: function () {
+
+			},
+			cancelShow: true,
+			cancelStr: '待会再看'
+		}, options)
+
+		var html = ''
+		html += 	'<div class="modal-dialog">'
+		html += 		'<div class="modal-content">'
+
+		html += 			'<div class="dialogCommon-header">'
+		html += 				'<span>' + opts.title + '</span>'
+		html += 				'<i class="iconfont icon-cha dialogCommon-close"></i>'
+		html += 			'</div>'
+
+		html += 			'<div class="dialogCommon-body">'
+		html += 				'<div class="dialogCommon-text">'
+		html += 					'<div class="alert-content">'
+		html += 						'<div class="alert-img"><i class="alertIcon"></i></div>'
+		html += 						'<div class="alert-text">'
+		html += 							'<p class="alert-text-title">' + opts.content + '</p>'
+		html += 							'<p class="alert-text-title">' + opts.subContent + '</p>'
+		html += 						'</div>'
+		html += 					'</div>'
+		html += 				'</div>'
+		html += 				'<div class="dialogCommon-bottom">'
+		html += 					'<input class="ok" type="button" value="' + opts.okStr + '">'
+		if (opts.cancelShow) {
+			html += 				'<input class="cancel" type="button" value="' + opts.cancelStr + '">'
+		}
+		html += 				'</div>'
+		html += 			'</div>'
+
+		html += 		'</div>'
+		html += 	'</div>'
+
+		var newElement = document.createElement('div')
+		newElement.setAttribute('id', opts.id)
+		newElement.className = 'dialogCommon modal-talent customDialog'
+		newElement.innerHTML = html
+		document.getElementById('App').appendChild(newElement)
+
+		var close = function () {
+			var thisDom = document.getElementById(opts.id)
+			document.getElementById('App').removeChild(thisDom)
+		}
+
+		var closeIcon_dom = document.getElementById(opts.id).getElementsByClassName('dialogCommon-close')[0]
+		var ok_dom = document.getElementById(opts.id).getElementsByClassName('ok')[0]
+		var cancel_dom = document.getElementById(opts.id).getElementsByClassName('cancel')[0]
+		closeIcon_dom.onclick = function () {
+			close()
+		}
+		ok_dom.onclick = function () {
+			opts.okFun()
+			close()
+		}
+		cancel_dom.onclick = function () {
+			opts.cancelFun()
+			close()
+		}
+	}
+	return alertDialog
+})()
+
 // parseURL(window.location.href).params.process_id
 var parseURL = (function () {
 	var parseURL = function (url) {
